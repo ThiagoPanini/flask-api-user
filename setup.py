@@ -1,20 +1,34 @@
 """
------------------------------
-Perguntas sobre este arquivo:
------------------------------
+---------------------------------------------------------
+                    Resumo do Módulo
+---------------------------------------------------------
+    Arquivo de setup com as principais informações da 
+aplicação consolidadas a partir da biblioteca setuptools
+
+---------------------------------------------------------
+                          FAQ
+---------------------------------------------------------
 
 1. Qual o objetivo do script setup.py?
-    1.1 Qual sua usabilidade em aplicações criadas?
-    1.2 Como se dá seu consumo na prática?
 
-2. Quais são as informações necessárias a serem preenchidas?
+    R: O arquivo setup.py serve para consolidar algumas 
+informações úteis da aplicação e fornecer um informativo 
+básico para novos desenvolvedores
 
-3. Qual o papel do "double underscore __" no nome das variáveis?
+---------------------------------------------------------
+
+2. Qual sua usabilidade em aplicações criadas?
+
+    R: Na prática, o arquivo setup.py pode ser utilizado 
+para instalação dos pacotes no virtual env de trabalho 
+
+Ref [2.1]: https://stackoverflow.com/questions/1471994/what-is-setup-py
 """
 
-# Third
+# Importando bibliotecas do módulo
 from setuptools import find_packages, setup
 
+# Definindo variáveis de setup
 __version__ = '0.1.0'
 __description__ = 'Api Python Flask'
 __long_description__ = 'This is an API to Flask Api Users'
@@ -22,6 +36,13 @@ __long_description__ = 'This is an API to Flask Api Users'
 __author__ = 'Thiago Panini'
 __author_email__ = 'thipanini94@gmail.com'
 
+# Definindo informações de teste
+testing_extras = [
+    'pytest',
+    'pytest-cov'
+]
+
+# Criando setup
 setup(
     name='api',
     version=__version__,
@@ -48,4 +69,9 @@ setup(
         'Programming Language :: Python :: 3.6',
         'License :: OSI Approved :: MIT License',
     ],
+    setup_requires=['pytest-runner'],
+    tests_require=['pytest'],
+    extras_require={
+        'testing': testing_extras
+    },
 )

@@ -1,33 +1,61 @@
 """
------------------------------
-Perguntas sobre este arquivo:
------------------------------
+---------------------------------------------------------
+                    Resumo do Módulo
+---------------------------------------------------------
+    O módulo __init__.py dentro da pasta apps/ serve como
+um inicializador em tempo de execução para scripts que
+criam uma aplicação Flask, como applications.py
+
+---------------------------------------------------------
+                          FAQ
+---------------------------------------------------------
 
 1. Qual seu papel na execução da aplicação?
-    R: Em resumo, o arquivo __init__.py permite marcar um diretório no disco como um pacote Python para futuras importações.
-        - Referência: https://stackoverflow.com/questions/448271/what-is-init-py-for
-        - Em um dos exemplos do link acima, é mostrado algo relacionado a inicialização de sessões (no caso, apps)
+    R: Em resumo, o arquivo __init__.py permite marcar um 
+diretório no disco como um pacote Python para futuras 
+importações*
 
-[BONUS] Relative imports on python: https://stackoverflow.com/questions/6323860/sibling-package-imports 
+Ref[1.1]: https://stackoverflow.com/questions/448271/what-is-init-py-for
+Em um dos exemplos do link acima, é mostrado algo 
+relacionado a inicialização de sessões (no caso, apps)
+
+Ref[1.2]: https://stackoverflow.com/questions/6323860/sibling-package-imports
+
+*Obs: Nas versões mais recentes do Python, não é necessário 
+colocar o arquivo __init__.py no diretório criado, uma vez 
+que o python automaticamente identifica que a pasta pode 
+ser um pacote.
 """
 
-# -*- coding: utf-8 -*-
-
+# Importando bibliotecas
 from flask import Flask
 from config import config
 
-# Importing function that configures the api
-from .api import configure_api
 
 def create_app(config_name):
+    """
+    Cria uma aplicação Flask e aplica as configurações necessárias
 
-    # Init a Flask object
-    app = Flask('api-users')
+    Parameters
+    ----------
+    :param config_name: chave da configuração a ser aplicada na aplicação
 
-    # Applies config file already built (config.py) for api object
+    Returns
+    -------
+    :return app: objeto Flask inicializado e configurado
+
+    Application
+    -----------
+    app = create_app(config_name=os.getenv('FLASK_ENV') or 'default')
+    """
+
+    # Inicializa objeto Flask
+    app = Flask('api-user')
+
+    # Aplica a configuração de acordo com parâmetro da função
     app.config.from_object(config[config_name])
 
-    # Executing function that configures the api (built on api.py)
-    configure_api(app)
+    # Aplica rotas na aplicação instanciada
+    #configure_api(app)
 
     return app
