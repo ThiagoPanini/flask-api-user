@@ -4,7 +4,9 @@ Perguntas sobre este arquivo:
 -----------------------------
 
 1. Qual seu papel na execução da aplicação?
-2. Trata-se de uma inicialização básica de API do Flask + setagem de configuração?
+    R: Em resumo, o arquivo __init__.py permite marcar um diretório no disco como um pacote Python para futuras importações.
+        - Referência: https://stackoverflow.com/questions/448271/what-is-init-py-for
+        - Em um dos exemplos do link acima, é mostrado algo relacionado a inicialização de sessões (no caso, apps)
 
 [BONUS] Relative imports on python: https://stackoverflow.com/questions/6323860/sibling-package-imports 
 """
