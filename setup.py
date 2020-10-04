@@ -1,5 +1,15 @@
 """
-Setup file with project specification
+-----------------------------
+Perguntas sobre este arquivo:
+-----------------------------
+
+1. Qual o objetivo do script setup.py?
+    1.1 Qual sua usabilidade em aplicações criadas?
+    1.2 Como se dá seu consumo na prática?
+
+2. Quais são as informações necessárias a serem preenchidas?
+
+3. Qual o papel do "double underscore __" no nome das variáveis?
 """
 
 # Third
