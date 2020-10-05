@@ -10,10 +10,34 @@
 ---------------------------------------------------------
 """
 
-# Importando bibliotecas
+"""# Importando bibliotecas
 from application import app
 
 # Definindo rotas de acordo com a sintaxe do flask
 @app.route('/')
 def index():
-    return {'hello': 'World Hiro'}
+    return {'hello': 'World Hiro'}"""
+
+def create_resources(app):
+    """
+    Cria recursos e define rotas para a aplicação
+
+    Parâmetros
+    ----------
+    :param app: aplicação flask instanciada e configurada
+
+    Retorno
+    -------
+    Essa função não possui retorno, além das definições intrínsecas dos recursos
+
+    Exemplo
+    -------
+    # Instanciando aplicação do flask
+    app = Flask(__name__)
+    create_resources(app)
+    """
+
+    # Definição de rota '/'
+    @app.route('/')
+    def index():
+        return {'hello': 'World Hiro'}
