@@ -30,7 +30,7 @@ ser um pacote.
 # Importando bibliotecas
 from flask import Flask
 from config import config
-from apps.api import create_resources
+from apps.api import associate_resources
 
 
 def create_app(config_name):
@@ -57,6 +57,6 @@ def create_app(config_name):
     app.config.from_object(config[config_name])
 
     # Aplica rotas na aplicação instanciada
-    create_resources(app)
+    associate_resources(app)
 
     return app

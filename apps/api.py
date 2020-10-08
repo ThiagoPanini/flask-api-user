@@ -18,7 +18,7 @@ from application import app
 def index():
     return {'hello': 'World Hiro'}"""
 
-def create_resources(app):
+def associate_resources(app):
     """
     Cria recursos e define rotas para a aplicação
 
@@ -41,3 +41,8 @@ def create_resources(app):
     @app.route('/')
     def index():
         return {'hello': 'World Hiro'}
+
+    # Definição de rota '/home'
+    @app.route('/home')
+    def home():
+        return {'You are in': 'Home'}
