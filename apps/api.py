@@ -10,13 +10,6 @@
 ---------------------------------------------------------
 """
 
-"""# Importando bibliotecas
-from application import app
-
-# Definindo rotas de acordo com a sintaxe do flask
-@app.route('/')
-def index():
-    return {'hello': 'World Hiro'}"""
 
 def associate_resources(app):
     """

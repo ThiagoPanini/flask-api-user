@@ -73,6 +73,7 @@ class Config:
     SECRET_KEY = getenv('SECRET_KEY') or '8QAzMJCmwETRvGKBxoZw' # Normalmente utilizada para autenticação de usuários
     APP_PORT = getenv('APP_PORT')
     DEBUG = getenv('DEBUG')
+    MONGODB_HOST = getenv('MONGODB_URI')
 
 class DevelopmentConfig(Config):
     FLASK_ENV = 'development'
@@ -81,6 +82,7 @@ class DevelopmentConfig(Config):
 class TestingConfig(Config):
     FLASK_ENV = 'testing'
     TESTING = True
+    MONGODB_HOST = getenv('MONGODB_URI_TEST')
 
 # Armazena todas as configurações em uma estrutura chave-valor
 config = {

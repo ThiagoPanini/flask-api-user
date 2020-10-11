@@ -44,3 +44,12 @@ def client():
 
     # Remove o contexto ao terminar os testes
     ctx.pop()
+
+# Criando fixture no escopo da função para teste do MongoDB
+@pytest.fixture(scope='function')
+def mongo(request, client):
+
+    def fin():
+        print('\n[teardown] disconnect from db')
+    
+    fin()

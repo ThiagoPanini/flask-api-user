@@ -31,6 +31,7 @@ ser um pacote.
 from flask import Flask
 from config import config
 from apps.api import associate_resources
+from apps.db import db
 
 
 def create_app(config_name):
@@ -58,5 +59,8 @@ def create_app(config_name):
 
     # Aplica rotas na aplicação instanciada
     associate_resources(app)
+
+    # Configura o MongoEngine
+    db.init_app(app)
 
     return app
