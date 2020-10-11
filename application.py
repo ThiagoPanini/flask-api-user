@@ -28,11 +28,7 @@ if isfile(_ENV_FILE):
 # Chave FLASK_ENV setada como 'development' no arquivo .env
 app = create_app(getenv('FLASK_ENV') or 'default') 
 
-# Aplicando resources à api (criados em apps/api.py)
-#from apps.api import *
-
-#TODO: pensar em uma forma otimizada de definir as rotas (resources) da api
-
+# Instanciando e rodando aplicação
 if __name__ == '__main__':
     # Retornando variáveis da aplicação
     ip = '0.0.0.0'
